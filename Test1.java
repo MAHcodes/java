@@ -16,11 +16,11 @@ public class Test1 {
 
     Test1 test = new Test1( name, grade1, grade2, grade3, grade4, grade5, grade6 );
 
-    test.tot(grade1, grade2, grade3);
-    test.m1(grade1);
-    System.out.println(test.avg(grade1, grade2, grade3));
-    test.avgdecimal(grade4, grade5, grade6);
-    Test1.m2();
+    tot(grade1, grade2, grade3);
+    m1(grade1);
+    System.out.println(avg(grade1, grade2, grade3));
+    avgdecimal(grade4, grade5, grade6);
+    test.m2();
   };
 
   Test1( String name, int grade1, int grade2, int grade3, double grade4, double grade5, double grade6 ) {
@@ -34,30 +34,30 @@ public class Test1 {
   }
 
   // method 1
-  public void tot(int grade1, int grade2, int grade3) {
+  public static void tot(int grade1, int grade2, int grade3) {
     int sum = grade1 + grade2 + grade3;
     System.out.println(sum);
   }
 
   // method 2
-  public void m1(int grade1) {
+  public static void m1(int grade1) {
     System.out.println(Math.pow(grade1, grade1));
   }
 
   // method 3
-  public int avg(int grade1, int grade2, int grade3) {
+  public static int avg(int grade1, int grade2, int grade3) {
     int avarage = (grade1 + grade2 + grade3) / 3;
     return avarage;
   }
 
   // method 4
-  public void avgdecimal(double grade4, double grade5, double grade6) {
+  public static void avgdecimal(double grade4, double grade5, double grade6) {
     double avarage = (grade4 + grade5 + grade6) / 3;
     System.out.println(avarage);
   }
 
   // method 5
-  public static void m2() {
+  public void m2() {
     System.out.println("Thank u for your first try in Java");
   }
 }
