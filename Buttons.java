@@ -1,38 +1,30 @@
-import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Buttons extends Applet implements ActionListener {
-  Label l1;
-  Button b1, b2, b3, b4;
+public class Buttons {
+  Buttons() {
+    Panel p = new Panel();
+    Frame f = new Frame("Title");
+    Checkbox c = new Checkbox("C++", true);
+    Label l = new Label("C++ Checkbox");
 
-  public void init() {
-    super.init();
-    l1 = new Label();
-    b1 = new Button();
-    b2 = new Button();
-    b3 = new Button();
-    b4 = new Button();
+    c.addItemListener(new ItemListener() {
+      public void itemStateChanged(ItemEvent e) {
+        l.setText(e.getStateChange() == 1 ? "checked" : "uschecked");
+      }
+    });
 
-    b1.setLabel("BT");
-    b2.setLabel("TS");
-    b3.setLabel("LT");
-    b4.setLabel("BP");
+    l.setAlignment(Label.CENTER);
+    p.setSize(500, 500);
+    p.add(l);
+    p.add(c);
+    f.add(p);
 
-    add(b1);
-    add(b2);
-    add(b3);
-    add(b4);
-    add(l1);
-
-    b1.addActionListener(this);
-    b2.addActionListener(this);
-    b3.addActionListener(this);
-    b4.addActionListener(this);
+    f.setLayout(null);
+    f.setVisible(true);
   }
 
-  @Override
-  public void actionPerformed(ActionEvent e) {
-    l1.setText("you pressed: " + e.getSource().getLabel());
+  public static void main(String[] args) {
+    new Buttons();
   }
 }
